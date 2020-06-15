@@ -1,0 +1,42 @@
+Setting up hadoop environment:
+//Hadoop 1
+1. after installation of Hadoop you have to set PATH for hadoop execution
+
+PATH=/home/hadoop/hadoop/bin:/home/hadoop/hadoop/sbin:$PATH
+
+2. Add Hadoop to your PATH for the shel
+
+ export HADOOP_HOME=/home/hadoop/hadoop
+ export PATH=${PATH}:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin
+
+
+3. Configure the Master Node
+
+     a. Set JAVA_HOME
+         export JAVA_HOME=${JAVA_HOME}
+4.Set NameNode LocationPermalink
+     create/edit to any port number: ~/hadoop/etc/hadoop/core-site.xm
+
+5. Set path for HDFSPermalink
+    create/edit ~/hadoop/etc/hadoop/hdfs-site.xml
+
+
+//Hadoop 2, you also have to set yarn
+
+6. Set YARN as Job SchedulerPermalink
+  create/edit ~/hadoop/etc/hadoop/mapred-site.xml
+
+7. Configure YARN
+create/ edit ~/hadoop/etc/hadoop/yarn-site.xml
+
+8. Do namenode format
+   under bin directory run this command: hadoop namenode -format
+
+9. Start hdfs:
+    $ sbin/start-dfs.sh
+
+Hadoop Creating Node Command:
+
+hdfs dfsadmin -refreshNamenodes first-nameNode: 1000
+
+http://zhongyaonan.com/hadoop-tutorial/setting-up-hadoop-2-6-on-mac-osx-yosemite.html
